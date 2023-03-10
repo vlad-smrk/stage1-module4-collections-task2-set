@@ -5,5 +5,21 @@ import java.util.List;
 
 public class HashSetCreator {
     public HashSet<Integer> createHashSet(List<Integer> sourceList) {
+         HashSet<Integer> output = new HashSet<>();
+         for (Integer element : sourceList) {
+             if (element % 2 == 0 && element != 0) {
+                 int number = element;
+                 while (number % 2 == 0) {
+                     output.add(number);
+                     number /= 2;
+                 }
+             } else if (element % 2 == 1) {
+                 output.add(element);
+                 output.add(element * 2);
+             } else {
+                 output.add(element);
+             }
+         }
+         return output;
     }
 }
