@@ -9,10 +9,11 @@ public class HashSetCreator {
          for (Integer element : sourceList) {
              if (element % 2 == 0 && element != 0) {
                  int number = element;
-                 while (number % 2 == 0) {
-                     output.add(number);
+                 output.add(number);
+                 do {
                      number /= 2;
-                 }
+                     output.add(number);
+                 } while (number % 2 == 0);
              } else if (element % 2 == 1) {
                  output.add(element);
                  output.add(element * 2);
